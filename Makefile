@@ -22,8 +22,6 @@ test:
 	./gradlew test
 
 report:
-	cd app/
-	echo "debug string"
 	./gradlew jacocoTestReport
 
 lint:
