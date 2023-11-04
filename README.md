@@ -14,5 +14,7 @@
 
 1. Сравнение плоских файлов (JSON)  
    Демонстрация: https://asciinema.org/a/W8JjBWwRtbsJHmKMkH7vzGwc3
+2. Сравнение плоских файлов (YAML) 
+   Демонстрация: https://asciinema.org/a/LLURDPMpEFKcA4JFEzp0DbnSs
 
 
