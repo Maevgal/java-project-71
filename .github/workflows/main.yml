@@ -6,13 +6,16 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
 
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-java@v3
         with:
-          java-version: '20'
+          java-version: '17'
           distribution: 'temurin'
       - uses: gradle/gradle-build-action@v2
         with:
@@ -24,6 +27,6 @@ jobs:
         env:
            HEXLET_ID: ${{secrets.HEXLET_ID}}
            JACOCO_SOURCE_PATH: src/main/java/app
-         with:
+           with:
            coverageCommand: make report
            coverageLocations: ${{github.workspace}}/app/build/reports/jacoco/test/jacocoTestReport.xml:jacoco
