@@ -15,13 +15,17 @@ public class App implements Callable<String> {
     private String filepath1;
     @Parameters(description = "path to second file", paramLabel = "filepath2")
     private String filepath2;
-    @Option(names = {"-f", "--format"}, description = "output format [default: ${DEFAULT-VALUE}]", defaultValue = "stylish", paramLabel = "format")
+    @Option(names = {"-f", "--format"},
+            description = "output format [default: ${DEFAULT-VALUE}]",
+            defaultValue = "stylish",
+            paramLabel = "format")
     String format;
 
     @Override
     public String call() throws Exception {
-        System.out.println(Differ.generate(filepath1, filepath2));
-        return Differ.generate(filepath1, filepath2);
+        String diff = Differ.generate(filepath1, filepath2);
+        System.out.println(diff);
+        return diff;
     }
 
     public static void main(String[] args) throws IOException {
