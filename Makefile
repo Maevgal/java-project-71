@@ -22,7 +22,8 @@ test:
 	./gradlew test
 
 report:
-	./gradlew jacocoTestReport
+	echo "debug string"
+	./app/gradlew jacocoTestReport
 
 lint:
 	./gradlew checkstyleMain
