@@ -9,8 +9,8 @@ class DifferTest {
 
     @Test
     void generateShouldCorrectWorkWihtBothFile() throws IOException {
-        String path1 = "/home/jane/java-projects/java-project-71/app/src/test/resources/file1.json";
-        String path2 = "/home/jane/java-projects/java-project-71/app/src/test/resources/file2.json";
+        String path1 = "./src/test/resources/file1.json";
+        String path2 = "./src/test/resources/file2.json";
         String expected = """
                 {
                 - follow: false
@@ -26,8 +26,8 @@ class DifferTest {
 
     @Test
     void generateShouldCorrectWorkWithOneEmptyFile() throws IOException {
-        String path1 = "/home/jane/java-projects/java-project-71/app/src/test/resources/file0.json";
-        String path2 = "/home/jane/java-projects/java-project-71/app/src/test/resources/file2.json";
+        String path1 = "./src/test/resources/file0.json";
+        String path2 = "./src/test/resources/file2.json";
         String expected = """
                 {
                 + host: hexlet.io
@@ -40,8 +40,8 @@ class DifferTest {
 
     @Test
     void generateShouldCorrectWorkWithSameFile() throws IOException {
-        String path1 = "/home/jane/java-projects/java-project-71/app/src/test/resources/file2.json";
-        String path2 = "/home/jane/java-projects/java-project-71/app/src/test/resources/file2.json";
+        String path1 = "./src/test/resources/file2.json";
+        String path2 = "./src/test/resources/file2.json";
         String expected = """
                 {
                   host: hexlet.io
