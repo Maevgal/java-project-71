@@ -19,7 +19,7 @@ public class App implements Callable<String> {
             description = "output format [default: ${DEFAULT-VALUE}]",
             defaultValue = "stylish",
             paramLabel = "format")
-    String format;
+    private String format;
 
     @Override
     public String call() throws Exception {

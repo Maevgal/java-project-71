@@ -22,12 +22,15 @@ public class Parser {
     }
 
     public static JsonFactory getFormat(String path) {
-        Object format = path.substring(path.lastIndexOf(".") + 1);
-        if (format.equals("json")) {
-            return new JsonFactory();
-        } else if (format.equals("yaml") || format.equals("yml")) {
-            return new YAMLFactory();
-        }
-        throw new RuntimeException("Формат: %s не поддеоживается".formatted(format));
+        String format = path.substring(path.lastIndexOf(".") + 1);
+        return switch (format) {
+            case "json" -> new JsonFactory();
+            case "yaml", "yml" -> new YAMLFactory();
+            default -> throw new RuntimeException("Формат: %s не поддеоживается".formatted(format));
+        };
     }
 }
+
+
+
+
