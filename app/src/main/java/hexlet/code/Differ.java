@@ -17,15 +17,8 @@ public class Differ {
         return findDiffer(pars1, pars2);
     }
 
-    public static void main(String[] args) throws IOException {
-        String path1 = "./src/test/resources/json/file1.json";
-        String path2 = "./src/test/resources/json/file2.json";
-        System.out.println(generate(path1, path2));
-    }
-
     public static String findDiffer(Map<String, Object> map1, Map<String, Object> map2) {
         Map<String, Object> mapOfResult = new LinkedHashMap<>();
-        //List<Map<String, Object>> result = new ArrayList<>();
         Set<String> keys = new TreeSet<>(map1.keySet());
         keys.addAll(map2.keySet());
         for (String key : keys) {
