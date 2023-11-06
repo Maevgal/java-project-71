@@ -26,7 +26,7 @@ public class Parser {
         return switch (format) {
             case "json" -> new JsonFactory();
             case "yaml", "yml" -> new YAMLFactory();
-            default -> throw new RuntimeException("Формат: %s не поддеоживается".formatted(format));
+            default -> throw new RuntimeException("Формат: %s не поддеpживается".formatted(format));
         };
     }
 }
