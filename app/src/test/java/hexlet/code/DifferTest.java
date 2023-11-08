@@ -7,6 +7,8 @@ import java.io.IOException;
 
 class DifferTest {
 
+    public static final String STYLISH_FORMAT = "stylish";
+
     @Test
     void generateShouldCorrectWorkWihtBothFileJson() throws IOException {
         String path1 = "./src/test/resources/json/file1.json";
@@ -37,7 +39,7 @@ class DifferTest {
                     - setting3: true
                     + setting3: none
                 }""";
-        String actual = Differ.generate(path1, path2);
+        String actual = Differ.generate(path1, path2, STYLISH_FORMAT);
         Assertions.assertThat(actual).isEqualTo(expected);
     }
 
@@ -61,7 +63,7 @@ class DifferTest {
                     + setting2: 300
                     + setting3: none
                 }""";
-        String actual = Differ.generate(path1, path2);
+        String actual = Differ.generate(path1, path2, STYLISH_FORMAT);
         Assertions.assertThat(actual).isEqualTo(expected);
     }
 
@@ -85,7 +87,7 @@ class DifferTest {
                       setting2: 300
                       setting3: none
                 }""";
-        String actual = Differ.generate(path1, path2);
+        String actual = Differ.generate(path1, path2, STYLISH_FORMAT);
         Assertions.assertThat(actual).isEqualTo(expected);
     }
 
@@ -119,7 +121,7 @@ class DifferTest {
                     - setting3: true
                     + setting3: none
                 }""";
-        String actual = Differ.generate(path1, path2);
+        String actual = Differ.generate(path1, path2, STYLISH_FORMAT);
         Assertions.assertThat(actual).isEqualTo(expected);
     }
 
@@ -143,7 +145,7 @@ class DifferTest {
                     + setting2: 300
                     + setting3: none
                 }""";
-        String actual = Differ.generate(path1, path2);
+        String actual = Differ.generate(path1, path2, STYLISH_FORMAT);
         Assertions.assertThat(actual).isEqualTo(expected);
     }
 
@@ -167,7 +169,7 @@ class DifferTest {
                       setting2: 300
                       setting3: none
                 }""";
-        String actual = Differ.generate(path1, path2);
+        String actual = Differ.generate(path1, path2, STYLISH_FORMAT);
         Assertions.assertThat(actual).isEqualTo(expected);
     }
 
