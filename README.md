@@ -16,5 +16,8 @@
    Демонстрация: https://asciinema.org/a/W8JjBWwRtbsJHmKMkH7vzGwc3
 2. Сравнение плоских файлов (YAML) 
    Демонстрация: https://asciinema.org/a/LLURDPMpEFKcA4JFEzp0DbnSs
+3. Сравнение файлов со вложенными структурами
+   Демонстрация: https://asciinema.org/a/U4caQV3RnO4AlgNhlYp75prJf
+   
 
 
