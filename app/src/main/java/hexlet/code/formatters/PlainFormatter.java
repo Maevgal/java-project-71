@@ -26,6 +26,9 @@ public class PlainFormatter {
                 result.append("\n");
             }
         }
+        if (!result.isEmpty()) {
+            result.deleteCharAt(result.length() - 1);
+        }
         return result.toString();
     }
 
