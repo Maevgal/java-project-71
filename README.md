@@ -18,6 +18,8 @@
    Демонстрация: https://asciinema.org/a/LLURDPMpEFKcA4JFEzp0DbnSs
 3. Сравнение файлов со вложенными структурами
    Демонстрация: https://asciinema.org/a/U4caQV3RnO4AlgNhlYp75prJf
+4. Вывод отчета в формате plain
+   Демонстрация: https://asciinema.org/a/tf8CoYjE9KmgqpPOlS0t3U1Cl
    
 
 
