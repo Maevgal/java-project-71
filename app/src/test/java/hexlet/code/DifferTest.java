@@ -94,6 +94,30 @@ class DifferTest {
     }
 
     @Test
+    void generateShouldCorrectWorkWithOneEmptyFileJsonWithoutFormat() throws IOException {
+        String path1 = "./src/test/resources/json/file0.json";
+        String path2 = "./src/test/resources/json/file2.json";
+        String expected = """
+                {
+                    + chars1: [a, b, c]
+                    + chars2: false
+                    + checked: true
+                    + default: [value1, value2]
+                    + id: null
+                    + key2: value2
+                    + numbers1: [1, 2, 3, 4]
+                    + numbers2: [22, 33, 44, 55]
+                    + numbers4: [4, 5, 6]
+                    + obj1: {nestedKey=value, isNested=true}
+                    + setting1: Another value
+                    + setting2: 300
+                    + setting3: none
+                }""";
+        String actual = Differ.generate(path1, path2);
+        Assertions.assertThat(actual).isEqualTo(expected);
+    }
+
+    @Test
     void generateShouldCorrectWorkWihtBothFileYml() throws IOException {
         String path1 = "./src/test/resources/yaml/file1.yml";
         String path2 = "./src/test/resources/yaml/file2.yaml";
