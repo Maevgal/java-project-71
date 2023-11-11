@@ -20,6 +20,9 @@
    Демонстрация: https://asciinema.org/a/U4caQV3RnO4AlgNhlYp75prJf
 4. Вывод отчета в формате plain
    Демонстрация: https://asciinema.org/a/tf8CoYjE9KmgqpPOlS0t3U1Cl
+5. Вывод отчета в формате json
+   Демонтрация: https://asciinema.org/a/5s1Ww1Vse2g14TQy2qDVhxl6Y
+   
    
 
 
