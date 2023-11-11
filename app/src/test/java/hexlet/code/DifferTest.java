@@ -17,29 +17,29 @@ class DifferTest {
         String path2 = "./src/test/resources/json/file2.json";
         String expected = """
                 {
-                      chars1: [a, b, c]
-                    - chars2: [d, e, f]
-                    + chars2: false
-                    - checked: false
-                    + checked: true
-                    - default: null
-                    + default: [value1, value2]
-                    - id: 45
-                    + id: null
-                    - key1: value1
-                    + key2: value2
-                      numbers1: [1, 2, 3, 4]
-                    - numbers2: [2, 3, 4, 5]
-                    + numbers2: [22, 33, 44, 55]
-                    - numbers3: [3, 4, 5]
-                    + numbers4: [4, 5, 6]
-                    + obj1: {nestedKey=value, isNested=true}
-                    - setting1: Some value
-                    + setting1: Another value
-                    - setting2: 200
-                    + setting2: 300
-                    - setting3: true
-                    + setting3: none
+                    chars1: [a, b, c]
+                  - chars2: [d, e, f]
+                  + chars2: false
+                  - checked: false
+                  + checked: true
+                  - default: null
+                  + default: [value1, value2]
+                  - id: 45
+                  + id: null
+                  - key1: value1
+                  + key2: value2
+                    numbers1: [1, 2, 3, 4]
+                  - numbers2: [2, 3, 4, 5]
+                  + numbers2: [22, 33, 44, 55]
+                  - numbers3: [3, 4, 5]
+                  + numbers4: [4, 5, 6]
+                  + obj1: {nestedKey=value, isNested=true}
+                  - setting1: Some value
+                  + setting1: Another value
+                  - setting2: 200
+                  + setting2: 300
+                  - setting3: true
+                  + setting3: none
                 }""";
         String actual = Differ.generate(path1, path2, STYLISH_FORMAT);
         Assertions.assertThat(actual).isEqualTo(expected);
@@ -51,19 +51,19 @@ class DifferTest {
         String path2 = "./src/test/resources/json/file2.json";
         String expected = """
                 {
-                    + chars1: [a, b, c]
-                    + chars2: false
-                    + checked: true
-                    + default: [value1, value2]
-                    + id: null
-                    + key2: value2
-                    + numbers1: [1, 2, 3, 4]
-                    + numbers2: [22, 33, 44, 55]
-                    + numbers4: [4, 5, 6]
-                    + obj1: {nestedKey=value, isNested=true}
-                    + setting1: Another value
-                    + setting2: 300
-                    + setting3: none
+                  + chars1: [a, b, c]
+                  + chars2: false
+                  + checked: true
+                  + default: [value1, value2]
+                  + id: null
+                  + key2: value2
+                  + numbers1: [1, 2, 3, 4]
+                  + numbers2: [22, 33, 44, 55]
+                  + numbers4: [4, 5, 6]
+                  + obj1: {nestedKey=value, isNested=true}
+                  + setting1: Another value
+                  + setting2: 300
+                  + setting3: none
                 }""";
         String actual = Differ.generate(path1, path2, STYLISH_FORMAT);
         Assertions.assertThat(actual).isEqualTo(expected);
@@ -75,19 +75,19 @@ class DifferTest {
         String path2 = "./src/test/resources/json/file2.json";
         String expected = """
                 {
-                      chars1: [a, b, c]
-                      chars2: false
-                      checked: true
-                      default: [value1, value2]
-                      id: null
-                      key2: value2
-                      numbers1: [1, 2, 3, 4]
-                      numbers2: [22, 33, 44, 55]
-                      numbers4: [4, 5, 6]
-                      obj1: {nestedKey=value, isNested=true}
-                      setting1: Another value
-                      setting2: 300
-                      setting3: none
+                    chars1: [a, b, c]
+                    chars2: false
+                    checked: true
+                    default: [value1, value2]
+                    id: null
+                    key2: value2
+                    numbers1: [1, 2, 3, 4]
+                    numbers2: [22, 33, 44, 55]
+                    numbers4: [4, 5, 6]
+                    obj1: {nestedKey=value, isNested=true}
+                    setting1: Another value
+                    setting2: 300
+                    setting3: none
                 }""";
         String actual = Differ.generate(path1, path2, STYLISH_FORMAT);
         Assertions.assertThat(actual).isEqualTo(expected);
@@ -99,19 +99,19 @@ class DifferTest {
         String path2 = "./src/test/resources/json/file2.json";
         String expected = """
                 {
-                    + chars1: [a, b, c]
-                    + chars2: false
-                    + checked: true
-                    + default: [value1, value2]
-                    + id: null
-                    + key2: value2
-                    + numbers1: [1, 2, 3, 4]
-                    + numbers2: [22, 33, 44, 55]
-                    + numbers4: [4, 5, 6]
-                    + obj1: {nestedKey=value, isNested=true}
-                    + setting1: Another value
-                    + setting2: 300
-                    + setting3: none
+                  + chars1: [a, b, c]
+                  + chars2: false
+                  + checked: true
+                  + default: [value1, value2]
+                  + id: null
+                  + key2: value2
+                  + numbers1: [1, 2, 3, 4]
+                  + numbers2: [22, 33, 44, 55]
+                  + numbers4: [4, 5, 6]
+                  + obj1: {nestedKey=value, isNested=true}
+                  + setting1: Another value
+                  + setting2: 300
+                  + setting3: none
                 }""";
         String actual = Differ.generate(path1, path2);
         Assertions.assertThat(actual).isEqualTo(expected);
@@ -123,29 +123,29 @@ class DifferTest {
         String path2 = "./src/test/resources/yaml/file2.yaml";
         String expected = """
                 {
-                      chars1: [a, b, c]
-                    - chars2: [d, e, f]
-                    + chars2: false
-                    - checked: false
-                    + checked: true
-                    - default: null
-                    + default: [value1, value2]
-                    - id: 45
-                    + id: null
-                    - key1: value1
-                    + key2: value2
-                      numbers1: [1, 2, 3, 4]
-                    - numbers2: [2, 3, 4, 5]
-                    + numbers2: [22, 33, 44, 55]
-                    - numbers3: [3, 4, 5]
-                    + numbers4: [4, 5, 6]
-                    + obj1: {nestedKey=value, isNested=true}
-                    - setting1: Some value
-                    + setting1: Another value
-                    - setting2: 200
-                    + setting2: 300
-                    - setting3: true
-                    + setting3: none
+                    chars1: [a, b, c]
+                  - chars2: [d, e, f]
+                  + chars2: false
+                  - checked: false
+                  + checked: true
+                  - default: null
+                  + default: [value1, value2]
+                  - id: 45
+                  + id: null
+                  - key1: value1
+                  + key2: value2
+                    numbers1: [1, 2, 3, 4]
+                  - numbers2: [2, 3, 4, 5]
+                  + numbers2: [22, 33, 44, 55]
+                  - numbers3: [3, 4, 5]
+                  + numbers4: [4, 5, 6]
+                  + obj1: {nestedKey=value, isNested=true}
+                  - setting1: Some value
+                  + setting1: Another value
+                  - setting2: 200
+                  + setting2: 300
+                  - setting3: true
+                  + setting3: none
                 }""";
         String actual = Differ.generate(path1, path2, STYLISH_FORMAT);
         Assertions.assertThat(actual).isEqualTo(expected);
@@ -157,19 +157,19 @@ class DifferTest {
         String path2 = "./src/test/resources/yaml/file2.yaml";
         String expected = """
                 {
-                    + chars1: [a, b, c]
-                    + chars2: false
-                    + checked: true
-                    + default: [value1, value2]
-                    + id: null
-                    + key2: value2
-                    + numbers1: [1, 2, 3, 4]
-                    + numbers2: [22, 33, 44, 55]
-                    + numbers4: [4, 5, 6]
-                    + obj1: {nestedKey=value, isNested=true}
-                    + setting1: Another value
-                    + setting2: 300
-                    + setting3: none
+                  + chars1: [a, b, c]
+                  + chars2: false
+                  + checked: true
+                  + default: [value1, value2]
+                  + id: null
+                  + key2: value2
+                  + numbers1: [1, 2, 3, 4]
+                  + numbers2: [22, 33, 44, 55]
+                  + numbers4: [4, 5, 6]
+                  + obj1: {nestedKey=value, isNested=true}
+                  + setting1: Another value
+                  + setting2: 300
+                  + setting3: none
                 }""";
         String actual = Differ.generate(path1, path2, STYLISH_FORMAT);
         Assertions.assertThat(actual).isEqualTo(expected);
@@ -181,19 +181,19 @@ class DifferTest {
         String path2 = "./src/test/resources/yaml/file2.yaml";
         String expected = """
                 {
-                      chars1: [a, b, c]
-                      chars2: false
-                      checked: true
-                      default: [value1, value2]
-                      id: null
-                      key2: value2
-                      numbers1: [1, 2, 3, 4]
-                      numbers2: [22, 33, 44, 55]
-                      numbers4: [4, 5, 6]
-                      obj1: {nestedKey=value, isNested=true}
-                      setting1: Another value
-                      setting2: 300
-                      setting3: none
+                    chars1: [a, b, c]
+                    chars2: false
+                    checked: true
+                    default: [value1, value2]
+                    id: null
+                    key2: value2
+                    numbers1: [1, 2, 3, 4]
+                    numbers2: [22, 33, 44, 55]
+                    numbers4: [4, 5, 6]
+                    obj1: {nestedKey=value, isNested=true}
+                    setting1: Another value
+                    setting2: 300
+                    setting3: none
                 }""";
         String actual = Differ.generate(path1, path2, STYLISH_FORMAT);
         Assertions.assertThat(actual).isEqualTo(expected);

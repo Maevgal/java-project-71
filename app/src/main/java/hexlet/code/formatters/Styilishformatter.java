@@ -10,7 +10,7 @@ public class Styilishformatter {
         String splitter = ": ";
         String resultOsMap = formatDiffList.entrySet().stream()
                 .flatMap(es -> es.getValue().entrySet().stream()
-                        .map(k -> beginStr.repeat(4) + k.getKey() + es.getKey() + splitter + k.getValue()))
+                        .map(k -> beginStr.repeat(2) + k.getKey() + es.getKey() + splitter + k.getValue()))
                 .collect(Collectors.joining("\n"));
         result.append(resultOsMap);
         result.append("\n}");
