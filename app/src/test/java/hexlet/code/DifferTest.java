@@ -9,6 +9,7 @@ class DifferTest {
 
     public static final String STYLISH_FORMAT = "stylish";
     public static final String PLAIN_FORMAT = "plain";
+    public static final String JSON_FORMAT = "json";
 
     @Test
     void generateShouldCorrectWorkWihtBothFileJson() throws IOException {
@@ -251,6 +252,73 @@ class DifferTest {
                 Property 'setting3' was added with value: 'none'
                 """;
         String actual = Differ.generate(path1, path2, PLAIN_FORMAT);
+        Assertions.assertThat(actual).isEqualTo(expected);
+    }
+
+    @Test
+    void generateShouldCorrectWorkWihtBothFileJsonFormatJson() throws IOException {
+        String path1 = "./src/test/resources/json/file1.json";
+        String path2 = "./src/test/resources/json/file2.json";
+        String expected = """
+                {
+                  "chars1" : {
+                    "  " : [ "a", "b", "c" ]
+                  },
+                  "chars2" : {
+                    "- " : [ "d", "e", "f" ],
+                    "+ " : false
+                  },
+                  "checked" : {
+                    "- " : false,
+                    "+ " : true
+                  },
+                  "default" : {
+                    "- " : null,
+                    "+ " : [ "value1", "value2" ]
+                  },
+                  "id" : {
+                    "- " : 45,
+                    "+ " : null
+                  },
+                  "key1" : {
+                    "- " : "value1"
+                  },
+                  "key2" : {
+                    "+ " : "value2"
+                  },
+                  "numbers1" : {
+                    "  " : [ 1, 2, 3, 4 ]
+                  },
+                  "numbers2" : {
+                    "- " : [ 2, 3, 4, 5 ],
+                    "+ " : [ 22, 33, 44, 55 ]
+                  },
+                  "numbers3" : {
+                    "- " : [ 3, 4, 5 ]
+                  },
+                  "numbers4" : {
+                    "+ " : [ 4, 5, 6 ]
+                  },
+                  "obj1" : {
+                    "+ " : {
+                      "nestedKey" : "value",
+                      "isNested" : true
+                    }
+                  },
+                  "setting1" : {
+                    "- " : "Some value",
+                    "+ " : "Another value"
+                  },
+                  "setting2" : {
+                    "- " : 200,
+                    "+ " : 300
+                  },
+                  "setting3" : {
+                    "- " : true,
+                    "+ " : "none"
+                  }
+                }""";
+        String actual = Differ.generate(path1, path2, JSON_FORMAT);
         Assertions.assertThat(actual).isEqualTo(expected);
     }
 
