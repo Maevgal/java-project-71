@@ -1,8 +1,8 @@
 package hexlet.code;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -15,10 +15,17 @@ public class Differ {
     }
 
     public static String generate(String path1, String path2, String format) throws IOException {
-        ObjectMapper mapper = new ObjectMapper();
-        Map<String, Object> pars1 = Parser.parse(path1);
-        Map<String, Object> pars2 = Parser.parse(path2);
+        Map<String, Object> pars1 = Parser.parse(getData(path1), getFormat(path1));
+        Map<String, Object> pars2 = Parser.parse(getData(path2), getFormat(path2));
         return Formatter.format(findDiffer(pars1, pars2), format);
+    }
+
+    public static String getFormat(String path) {
+        return path.substring(path.lastIndexOf(".") + 1);
+    }
+
+    public static byte[] getData(String path) throws IOException {
+        return Files.readAllBytes(Path.of(path));
     }
 
     public static Map<String, Map<String, Object>> findDiffer(Map<String, Object> map1, Map<String, Object> map2) {

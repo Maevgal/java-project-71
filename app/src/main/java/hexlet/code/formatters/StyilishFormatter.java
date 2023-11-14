@@ -3,7 +3,7 @@ package hexlet.code.formatters;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class Styilishformatter {
+public class StyilishFormatter {
     public static String format(Map<String, Map<String, Object>> formatDiffList) {
         StringBuilder result = new StringBuilder("{\n");
         String beginStr = " ";

@@ -3,7 +3,7 @@ package hexlet.code;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import hexlet.code.formatters.JsonFormatter;
 import hexlet.code.formatters.PlainFormatter;
-import hexlet.code.formatters.Styilishformatter;
+import hexlet.code.formatters.StyilishFormatter;
 
 import java.util.Map;
 
@@ -15,7 +15,7 @@ public class Formatter {
         return switch (format) {
             case "plain" -> PlainFormatter.format(formatDiffList);
             case "json" -> JsonFormatter.format(formatDiffList);
-            default -> Styilishformatter.format(formatDiffList);
+            default -> StyilishFormatter.format(formatDiffList);
         };
     }
 }

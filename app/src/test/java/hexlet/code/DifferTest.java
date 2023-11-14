@@ -230,8 +230,6 @@ class DifferTest {
         Assertions.assertThat(actual).isEqualTo(expected);
     }
 
-
-
     @Test
     void generateShouldCorrectWorkWihtBothFileYmlPlainFormat() throws IOException {
         String path1 = "./src/test/resources/yaml/file1.yml";
@@ -347,7 +345,7 @@ class DifferTest {
     void correctFormatFileForParce() throws IOException {
         String path = "./src/test/resources/uncorrectFormat.jpg";
         String expected = "Формат: jpg не поддеpживается";
-        Assertions.assertThatThrownBy(() -> Parser.getFormat(path))
+        Assertions.assertThatThrownBy(() -> Parser.getFormat(Differ.getFormat(path)))
                 .isInstanceOf(RuntimeException.class)
                 .hasMessage(expected);
     }
