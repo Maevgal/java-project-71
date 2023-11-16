@@ -1,5 +1,7 @@
 package hexlet.code.formatters;
 
+import hexlet.code.Differ;
+
 import java.util.Map;
 
 public class PlainFormatter {
@@ -12,18 +14,18 @@ public class PlainFormatter {
             result.append("Property '");
             result.append(diff.getKey());
             if (diff.getValue().containsKey("+ ") && diff.getValue().containsKey("- ")) {
-                result.append("' was updated. From ");
-                result.append(resultValue(diff.getValue().get("- ")));
-                result.append(" to ");
-                result.append(resultValue(diff.getValue().get("+ ")));
-                result.append("\n");
+                result.append("' was updated. From ")
+                        .append(resultValue(diff.getValue().get("- ")))
+                        .append(" to ")
+                        .append(resultValue(diff.getValue().get("+ ")))
+                        .append("\n");
             } else if (diff.getValue().containsKey("+ ")) {
-                result.append("' was added with value: ");
-                result.append(resultValue(diff.getValue().get("+ ")));
-                result.append("\n");
+                result.append("' was added with value: ")
+                        .append(resultValue(diff.getValue().get("+ ")))
+                        .append("\n");
             } else if (diff.getValue().containsKey("- ")) {
-                result.append("' was removed");
-                result.append("\n");
+                result.append("' was removed")
+                        .append("\n");
             }
         }
         if (!result.isEmpty()) {

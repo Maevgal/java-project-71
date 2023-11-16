@@ -10,6 +10,12 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class Differ {
+    public static final String ADDED = "+ ";
+    public static final String DELETED = "- ";
+    public static final String UNCHANGED = "  ";
+    public static final String BEFORE_CHANGED = "- ";
+    public static final String AFTER_CHANGED = "+ ";
+
     public static String generate(String path1, String path2) throws IOException {
         return generate(path1, path2, "stylish");
     }
@@ -35,21 +41,21 @@ public class Differ {
         for (String key : keys) {
             if (!map1.containsKey(key)) {
                 Map<String, Object> value = new LinkedHashMap<>();
-                value.put("+ ", map2.get(key));
+                value.put(ADDED, map2.get(key));
                 mapOfResult.put(key, value);
             } else if (!map2.containsKey(key)) {
                 Map<String, Object> value = new LinkedHashMap<>();
-                value.put("- ", map1.get(key));
+                value.put(DELETED, map1.get(key));
                 mapOfResult.put(key, value);
             } else if (Objects.equals(map1.get(key), (map2.get(key)))) {
                 Map<String, Object> value = new LinkedHashMap<>();
-                value.put("  ", map1.get(key));
+                value.put(UNCHANGED, map1.get(key));
                 mapOfResult.put(key, value);
             } else {
                 Map<String, Object> value = new LinkedHashMap<>();
-                value.put("- ", map1.get(key));
+                value.put(BEFORE_CHANGED, map1.get(key));
                 mapOfResult.put(key, value);
-                value.put("+ ", map2.get(key));
+                value.put(AFTER_CHANGED, map2.get(key));
                 mapOfResult.put(key, value);
             }
         }
