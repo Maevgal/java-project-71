@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class Formatter {
     public static String format(
-            Map<String, Map<String, Object>> formatDiffList,
+            Map<String, Map<Action, Object>> formatDiffList,
             String format
     ) throws JsonProcessingException {
         return switch (format) {

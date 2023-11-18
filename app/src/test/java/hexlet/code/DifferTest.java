@@ -279,64 +279,64 @@ class DifferTest {
         String path1 = "./src/test/resources/json/file1.json";
         String path2 = "./src/test/resources/json/file2.json";
         String expected = """
-                {
-                  "chars1" : {
-                    "  " : [ "a", "b", "c" ]
-                  },
-                  "chars2" : {
-                    "- " : [ "d", "e", "f" ],
-                    "+ " : false
-                  },
-                  "checked" : {
-                    "- " : false,
-                    "+ " : true
-                  },
-                  "default" : {
-                    "- " : null,
-                    "+ " : [ "value1", "value2" ]
-                  },
-                  "id" : {
-                    "- " : 45,
-                    "+ " : null
-                  },
-                  "key1" : {
-                    "- " : "value1"
-                  },
-                  "key2" : {
-                    "+ " : "value2"
-                  },
-                  "numbers1" : {
-                    "  " : [ 1, 2, 3, 4 ]
-                  },
-                  "numbers2" : {
-                    "- " : [ 2, 3, 4, 5 ],
-                    "+ " : [ 22, 33, 44, 55 ]
-                  },
-                  "numbers3" : {
-                    "- " : [ 3, 4, 5 ]
-                  },
-                  "numbers4" : {
-                    "+ " : [ 4, 5, 6 ]
-                  },
-                  "obj1" : {
-                    "+ " : {
-                      "nestedKey" : "value",
-                      "isNested" : true
-                    }
-                  },
-                  "setting1" : {
-                    "- " : "Some value",
-                    "+ " : "Another value"
-                  },
-                  "setting2" : {
-                    "- " : 200,
-                    "+ " : 300
-                  },
-                  "setting3" : {
-                    "- " : true,
-                    "+ " : "none"
-                  }
-                }""";
+                 {
+                   "chars1" : {
+                     "UNCHANGED" : [ "a", "b", "c" ]
+                   },
+                   "chars2" : {
+                     "DELETED" : [ "d", "e", "f" ],
+                     "ADDED" : false
+                   },
+                   "checked" : {
+                     "DELETED" : false,
+                     "ADDED" : true
+                   },
+                   "default" : {
+                     "DELETED" : null,
+                     "ADDED" : [ "value1", "value2" ]
+                   },
+                   "id" : {
+                     "DELETED" : 45,
+                     "ADDED" : null
+                   },
+                   "key1" : {
+                     "DELETED" : "value1"
+                   },
+                   "key2" : {
+                     "ADDED" : "value2"
+                   },
+                   "numbers1" : {
+                     "UNCHANGED" : [ 1, 2, 3, 4 ]
+                   },
+                   "numbers2" : {
+                     "DELETED" : [ 2, 3, 4, 5 ],
+                     "ADDED" : [ 22, 33, 44, 55 ]
+                   },
+                   "numbers3" : {
+                     "DELETED" : [ 3, 4, 5 ]
+                   },
+                   "numbers4" : {
+                     "ADDED" : [ 4, 5, 6 ]
+                   },
+                   "obj1" : {
+                     "ADDED" : {
+                       "nestedKey" : "value",
+                       "isNested" : true
+                     }
+                   },
+                   "setting1" : {
+                     "DELETED" : "Some value",
+                     "ADDED" : "Another value"
+                   },
+                   "setting2" : {
+                     "DELETED" : 200,
+                     "ADDED" : 300
+                   },
+                   "setting3" : {
+                     "DELETED" : true,
+                     "ADDED" : "none"
+                   }
+                 }""";
         String actual = Differ.generate(path1, path2, JSON_FORMAT);
         Assertions.assertThat(actual).isEqualTo(expected);
     }
